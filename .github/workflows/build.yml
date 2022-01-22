@@ -26,7 +26,7 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
-	  	uname -a
-		cat /etc/issue
-		gcc -o main main.c
-		./main
+        uname -a
+        cat /etc/issue
+        gcc -o main main.c
+        ./main
