@@ -1,0 +1,32 @@
+name: Build_main
+
+on: 
+  #release:
+  #  types: [published]
+
+  #push:
+  #  branches: 
+  #    - master
+
+  #schedule:
+  #  - cron: 0 8 * * 5
+  
+  watch:
+    types: [started]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+
+    - name: Initialization environment
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+	  	uname -a
+		cat /etc/issue
+		gcc -o main main.c
+		./main
